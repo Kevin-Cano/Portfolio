@@ -1,0 +1,38 @@
+projects:
+  - slug: "projet-exemple-1"
+    title: "Application E-commerce"
+    short_description: "Plateforme de vente en ligne complète avec paiement sécurisé"
+    description: |
+      Application e-commerce moderne développée avec Symfony et React. 
+      Intègre un système de paiement Stripe, gestion de stock en temps réel, 
+      et tableau de bord administrateur complet.
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop"
+    tags: ["Symfony", "React", "MySQL", "Stripe"]
+    demo_url: "https://demo.example.com"
+    github_url: "https://github.com/username/project"
+    featured: true
+
+  - slug: "projet-exemple-2"
+    title: "API REST Microservices"
+    short_description: "Architecture microservices pour gestion d'entreprise"
+    description: |
+      Système de microservices communiquant via RabbitMQ, 
+      avec authentification JWT et documentation OpenAPI complète.
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop"
+    tags: ["Symfony", "API Platform", "Docker", "RabbitMQ"]
+    demo_url: ""
+    github_url: "https://github.com/username/api-project"
+    featured: true
+
+  - slug: "projet-exemple-3"
+    title: "Dashboard Analytics"
+    short_description: "Tableau de bord temps réel avec graphiques interactifs"
+    description: |
+      Interface de visualisation de données en temps réel avec WebSockets.
+      Graphiques personnalisables et exports PDF/Excel.
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+    tags: ["Vue.js", "Node.js", "WebSocket", "Chart.js"]
+    demo_url: "https://analytics.example.com"
+    github_url: ""
+    featured: false
+

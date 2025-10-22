@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ project.title }} - Portfolio{% endblock %}
+
+{% block body %}
+<section class="project-detail">
+    <div class="container">
+        <a href="{{ path('home') }}#projects" class="back-link fade-in-up">
+            <i class="fas fa-arrow-left"></i> Retour aux projets
+        </a>
+        
+        <div class="project-header fade-in-up">
+            <h1 class="project-detail-title">{{ project.title }}</h1>
+            
+            <div class="project-meta">
+                <div class="project-tags">
+                    {% for tag in project.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="project-links-detail">
+                    {% if project.demo_url %}
+                    <a href="{{ project.demo_url }}" target="_blank" class="btn btn-outline btn-sm">
+                        <i class="fas fa-external-link-alt"></i> Voir la démo
+                    </a>
+                    {% endif %}
+                    {% if project.github_url %}
+                    <a href="{{ project.github_url }}" target="_blank" class="btn btn-outline btn-sm">
+                        <i class="fab fa-github"></i> Voir le code
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-image-full fade-in-up">
+            <img src="{{ project.image }}" alt="{{ project.title }}">
+        </div>
+        
+        <div class="project-description-full fade-in-up">
+            <h2>Description du projet</h2>
+            <div class="description-content">
+                {{ project.description|nl2br }}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
