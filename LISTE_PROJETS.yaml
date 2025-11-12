@@ -1,0 +1,280 @@
+# ============================================
+# APPLICATIONS WEB
+# ============================================
+
+# Application E-commerce
+- slug: "boutique-en-ligne"
+  title: "Boutique en Ligne"
+  short_description: "Plateforme e-commerce complète avec gestion de stock et paiements"
+  description: |
+    Développement d'une plateforme e-commerce moderne avec interface administrateur.
+
+    Fonctionnalités principales :
+    - Catalogue produits avec filtres avancés
+    - Panier et tunnel de commande optimisé
+    - Intégration Stripe pour les paiements
+    - Dashboard admin avec statistiques
+    - Gestion de stock en temps réel
+    - Système de reviews et notations
+  image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop"
+  tags: ["Symfony", "MySQL", "Stripe", "Bootstrap"]
+  demo_url: ""
+  github_url: ""
+  featured: true
+
+# Réseau Social
+- slug: "reseau-social"
+  title: "Réseau Social Thématique"
+  short_description: "Plateforme sociale avec messagerie temps réel et publications"
+  description: |
+    Réseau social thématique développé avec architecture moderne.
+
+    Fonctionnalités :
+    - Système de posts avec likes et commentaires
+    - Messagerie instantanée (WebSocket)
+    - Profils utilisateurs personnalisables
+    - Système d'amis et followers
+    - Feed d'actualités algorithmique
+    - Notifications push
+  image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop"
+  tags: ["Symfony", "WebSocket", "React", "MongoDB"]
+  demo_url: ""
+  github_url: ""
+  featured: true
+
+# Blog
+- slug: "blog-personnel"
+  title: "Blog Personnel"
+  short_description: "Blog moderne avec éditeur markdown et commentaires"
+  description: |
+    Blog personnel avec interface épurée et performante.
+
+    Caractéristiques :
+    - Éditeur Markdown avec prévisualisation
+    - Système de catégories et tags
+    - Commentaires avec modération
+    - Recherche full-text
+    - SEO optimisé
+    - RSS Feed
+  image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop"
+  tags: ["Symfony", "Twig", "Elasticsearch", "SEO"]
+  demo_url: ""
+  github_url: ""
+  featured: false
+
+# ============================================
+# API / BACKEND
+# ============================================
+
+# API REST
+- slug: "api-rest"
+  title: "API REST Complète"
+  short_description: "API RESTful avec documentation Swagger et authentification JWT"
+  description: |
+    API REST professionnelle avec bonnes pratiques de développement.
+
+    Points clés :
+    - Architecture RESTful respectant les standards
+    - Authentification JWT avec refresh tokens
+    - Documentation OpenAPI/Swagger automatique
+    - Versioning de l'API
+    - Rate limiting et throttling
+    - Tests unitaires et d'intégration
+  image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop"
+  tags: ["API Platform", "Symfony", "JWT", "OpenAPI"]
+  demo_url: ""
+  github_url: ""
+  featured: true
+
+# Microservices
+- slug: "architecture-microservices"
+  title: "Architecture Microservices"
+  short_description: "Système distribué avec communication asynchrone"
+  description: |
+    Architecture microservices pour application d'entreprise.
+
+    Services développés :
+    - Service d'authentification centralisé
+    - Service de gestion utilisateurs
+    - Service de notifications
+    - Service de facturation
+    - API Gateway
+    - Communication via RabbitMQ
+  image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop"
+  tags: ["Symfony", "Docker", "RabbitMQ", "Redis"]
+  demo_url: ""
+  github_url: ""
+  featured: true
+
+# ============================================
+# DASHBOARDS / ANALYTICS
+# ============================================
+
+# Dashboard Analytics
+- slug: "dashboard-analytics"
+  title: "Dashboard Analytics"
+  short_description: "Tableau de bord temps réel avec graphiques interactifs"
+  description: |
+    Dashboard de visualisation de données en temps réel.
+
+    Fonctionnalités :
+    - Graphiques interactifs (Chart.js)
+    - Mise à jour temps réel via WebSocket
+    - Export PDF et Excel
+    - Filtres avancés par période
+    - KPI personnalisables
+    - Multi-tenant
+  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+  tags: ["Vue.js", "Chart.js", "WebSocket", "Node.js"]
+  demo_url: ""
+  github_url: ""
+  featured: false
+
+# CRM
+- slug: "crm-entreprise"
+  title: "CRM d'Entreprise"
+  short_description: "Système de gestion client avec pipeline commercial"
+  description: |
+    Solution CRM complète pour PME.
+
+    Modules :
+    - Gestion contacts et entreprises
+    - Pipeline de ventes avec Kanban
+    - Historique des interactions
+    - Génération de devis et factures
+    - Rapports et statistiques
+    - Intégrations email
+  image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+  tags: ["Symfony", "PostgreSQL", "Bootstrap", "PDF"]
+  demo_url: ""
+  github_url: ""
+  featured: false
+
+# ============================================
+# APPLICATIONS MOBILES
+# ============================================
+
+# Application Mobile
+- slug: "app-mobile"
+  title: "Application Mobile Hybride"
+  short_description: "App mobile cross-platform avec backend API"
+  description: |
+    Application mobile hybride iOS/Android.
+
+    Caractéristiques :
+    - Interface native performante
+    - Synchronisation offline
+    - Notifications push
+    - Géolocalisation
+    - Appareil photo et galerie
+    - Backend API Symfony
+  image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop"
+  tags: ["React Native", "Symfony API", "Firebase", "Redux"]
+  demo_url: ""
+  github_url: ""
+  featured: true
+
+# ============================================
+# OUTILS / UTILITIES
+# ============================================
+
+# Outil de Productivité
+- slug: "outil-productivite"
+  title: "Outil de Gestion de Tâches"
+  short_description: "Gestionnaire de tâches collaboratif type Trello"
+  description: |
+    Application de gestion de projets et tâches.
+
+    Fonctionnalités :
+    - Boards Kanban avec drag & drop
+    - Collaboration en équipe
+    - Attribution de tâches
+    - Deadlines et rappels
+    - Pièces jointes et commentaires
+    - Statistiques de productivité
+  image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop"
+  tags: ["Symfony", "Vue.js", "Draggable", "MySQL"]
+  demo_url: ""
+  github_url: ""
+  featured: false
+
+# Générateur
+- slug: "generateur-code"
+  title: "Générateur de Code"
+  short_description: "CLI pour générer du code boilerplate automatiquement"
+  description: |
+    Outil en ligne de commande pour augmenter la productivité.
+
+    Capacités :
+    - Génération de CRUD complet
+    - Templates personnalisables
+    - Support multi-frameworks
+    - Configuration via YAML
+    - Tests automatiques générés
+    - Documentation auto-générée
+  image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop"
+  tags: ["PHP", "Console", "Templates", "CLI"]
+  demo_url: ""
+  github_url: ""
+  featured: false
+
+# ============================================
+# PROJETS OPEN SOURCE
+# ============================================
+
+# Contribution OSS
+- slug: "contribution-opensource"
+  title: "Contributions Open Source"
+  short_description: "Contributions à divers projets open source populaires"
+  description: |
+    Contributions régulières à l'écosystème open source.
+
+    Projets :
+    - Symfony : Corrections de bugs et nouvelles fonctionnalités
+    - Laravel : Documentation et exemples
+    - Vue.js : Composants communautaires
+    - Participation aux discussions RFC
+    - Maintenance de packages personnels
+  image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=600&fit=crop"
+  tags: ["Open Source", "PHP", "JavaScript", "Community"]
+  demo_url: ""
+  github_url: "https://github.com/votre-username"
+  featured: false
+
+# ============================================
+# IMAGES UNSPLASH PAR THÈME
+# ============================================
+
+# Code/Programming:
+# photo-1461749280684-dccba630e2f6
+# photo-1555949963-aa79dcee981c
+# photo-1558494949-ef010cbdcc31
+
+# Business/Analytics:
+# photo-1551288049-bebda4e38f71
+# photo-1460925895917-afdab827c52f
+
+# E-commerce:
+# photo-1557821552-17105176677c
+# photo-1556742044-3c52d6e88c62
+
+# Mobile:
+# photo-1512941937669-90a1b58e7e9c
+# photo-1511707171634-5f897ff02aa9
+
+# Network/Social:
+# photo-1611162617474-5b21e879e113
+# photo-1563986768609-322da13575f3
+
+# Server/Cloud:
+# photo-1451187580459-43490279c0fa
+# photo-1558494949-ef010cbdcc31
+
+# Design/Creative:
+# photo-1561070791-2526d30994b5
+# photo-1626785774573-4b799315345d
+
+# Productivity/Tools:
+# photo-1484480974693-6ca0a78fb36b
+# photo-1499750310107-5fef28a66643
+
