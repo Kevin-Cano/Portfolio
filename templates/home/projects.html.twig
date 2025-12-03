@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projets - Portfolio{% endblock %}
+
+{% block body %}
+<section class="projects-page">
+    <div class="container">
+        <div class="section-header fade-in-up">
+            <h1 class="section-title">Tous mes projets</h1>
+            <div class="section-line"></div>
+            <p class="section-subtitle">
+                Une vue détaillée de l'ensemble de mes projets, avec plus d'informations sur chaque réalisation.
+            </p>
+        </div>
+
+        {% if projects is empty %}
+            <p class="no-projects">Aucun projet pour le moment.</p>
+        {% else %}
+            <div class="projects-list">
+                {% for project in projects %}
+                    <article class="project-detail-card fade-in-up" data-delay="{{ loop.index * 100 }}">
+                        <header class="project-detail-header">
+                            <h2 class="project-detail-title">{{ project.title }}</h2>
+
+                            <div class="project-meta">
+                                <div class="project-tags">
+                                    {% for tag in project.tags ?? [] %}
+                                        <span class="tag">{{ tag }}</span>
+                                    {% endfor %}
+                                </div>
+
+                                <div class="project-links-detail">
+                                    {% if project.demo_url %}
+                                        <a href="{{ project.demo_url }}" target="_blank" class="btn btn-outline btn-sm">
+                                            <i class="fas fa-external-link-alt"></i> Démo
+                                        </a>
+                                    {% endif %}
+                                    {% if project.github_url %}
+                                        <a href="{{ project.github_url }}" target="_blank" class="btn btn-outline btn-sm">
+                                            <i class="fab fa-github"></i> Code
+                                        </a>
+                                    {% endif %}
+                                    <a href="{{ path('project_detail', { slug: project.slug }) }}" class="btn btn-outline btn-sm">
+                                        <i class="fas fa-info-circle"></i> Détails
+                                    </a>
+                                </div>
+                            </div>
+                        </header>
+
+                        {% if project.image %}
+                            <div class="project-image-full">
+                                <img src="{{ project.image }}" alt="{{ project.title }}">
+                            </div>
+                        {% endif %}
+
+                        <div class="project-description-full">
+                            <h3>Aperçu</h3>
+                            <div class="description-content">
+                                {{ (project.description ?? project.short_description)|default('Pas encore de description détaillée.')|nl2br }}
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
+

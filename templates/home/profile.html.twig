@@ -1,0 +1,279 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil - Portfolio{% endblock %}
+
+{% block body %}
+<section class="profile-page">
+    <div class="container">
+        <!-- Bannière 1 : photo + description -->
+        <section class="profile-section profile-intro fade-in-up">
+            <div class="profile-intro-grid">
+                <div class="profile-photo">
+                    <div class="image-wrapper">
+                        <img src="https://placehold.co/400x400" alt="Photo de profil">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+                <div class="profile-text">
+                    <h1 class="section-title">À propos de moi</h1>
+                    <div class="section-line"></div>
+                    <p class="profile-description">
+                        Je suis un développeur passionné qui aime construire des expériences web modernes, fluides
+                        et agréables à utiliser. J'apprécie particulièrement travailler sur des projets qui mêlent
+                        technique, design et un peu de fun.
+                    </p>
+                    <p class="profile-description">
+                        Quand je ne code pas, je passe mon temps à regarder des animés, jouer à des jeux vidéo,
+                        et découvrir de nouveaux artistes et groupes de musique.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bannière 2 : animes -->
+        <section class="profile-section fade-in-up">
+            <div class="section-header">
+                <h2 class="section-title">Animés que j'aime</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Quelques animés choisis au hasard (je personnaliserai la liste plus tard).</p>
+            </div>
+
+            <div class="carousel" data-carousel="animes">
+                <button class="carousel-btn carousel-btn-prev" type="button" aria-label="Animés précédents" data-carousel-prev>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="carousel-track favorites-grid">
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=Attack+on+Titan" alt="Attack on Titan">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">Attack on Titan</h3>
+                                <p class="favorite-description">Un monde sombre, une histoire intense et des personnages marquants.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=Demon+Slayer" alt="Demon Slayer">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">Demon Slayer</h3>
+                                <p class="favorite-description">Une direction artistique incroyable et des combats spectaculaires.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=Jujutsu+Kaisen" alt="Jujutsu Kaisen">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">Jujutsu Kaisen</h3>
+                                <p class="favorite-description">Un excellent mélange d'action, d'humour et d'occulte.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=Fullmetal+Alchemist" alt="Fullmetal Alchemist">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">Fullmetal Alchemist: Brotherhood</h3>
+                                <p class="favorite-description">Un classique avec une histoire profonde et un worldbuilding très solide.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=Haikyuu" alt="Haikyuu">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">Haikyuu!!</h3>
+                                <p class="favorite-description">Un animé de sport ultra dynamique qui donne envie de tout donner.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn carousel-btn-next" type="button" aria-label="Animés suivants" data-carousel-next>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Bannière 3 : jeux vidéo -->
+        <section class="profile-section fade-in-up">
+            <div class="section-header">
+                <h2 class="section-title">Jeux vidéo favoris</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Une sélection de jeux que j'apprécie particulièrement.</p>
+            </div>
+
+            <div class="carousel" data-carousel="games">
+                <button class="carousel-btn carousel-btn-prev" type="button" aria-label="Jeux précédents" data-carousel-prev>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="carousel-track favorites-grid">
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=The+Witcher+3" alt="The Witcher 3">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">The Witcher 3</h3>
+                                <p class="favorite-description">Un RPG riche avec une narration et un univers incroyables.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=Elden+Ring" alt="Elden Ring">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">Elden Ring</h3>
+                                <p class="favorite-description">Un monde ouvert exigeant mais extrêmement gratifiant.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=Valorant" alt="Valorant">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">Valorant</h3>
+                                <p class="favorite-description">Un FPS compétitif qui mélange précision et capacités uniques.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=Minecraft" alt="Minecraft">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">Minecraft</h3>
+                                <p class="favorite-description">Un bac à sable infini pour construire, explorer et créer des projets fous.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=Rocket+League" alt="Rocket League">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">Rocket League</h3>
+                                <p class="favorite-description">Des matchs nerveux mêlant football et voitures propulsées.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn carousel-btn-next" type="button" aria-label="Jeux suivants" data-carousel-next>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Bannière 4 : groupes / artistes -->
+        <section class="profile-section fade-in-up">
+            <div class="section-header">
+                <h2 class="section-title">Groupes & artistes</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Quelques artistes et groupes en vrac, que je remplacerai plus tard.</p>
+            </div>
+
+            <div class="carousel" data-carousel="artists">
+                <button class="carousel-btn carousel-btn-prev" type="button" aria-label="Artistes précédents" data-carousel-prev>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="carousel-track favorites-grid">
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=Imagine+Dragons" alt="Imagine Dragons">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">Imagine Dragons</h3>
+                                <p class="favorite-description">Des sons énergiques parfaits pour se motiver.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=Lo-Fi+Beats" alt="Lo-Fi Beats">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">Lo-Fi Beats</h3>
+                                <p class="favorite-description">Idéal pour rester concentré pendant les sessions de code.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=Random+Artist" alt="Random Artist">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">Random Artist</h3>
+                                <p class="favorite-description">Un placeholder que tu pourras remplacer par tes vrais coups de cœur.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=The+Weeknd" alt="The Weeknd">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">The Weeknd</h3>
+                                <p class="favorite-description">Des sons modernes parfaits pour coder la nuit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="favorite-card">
+                            <div class="favorite-image">
+                                <img src="https://placehold.co/400x250?text=Random+Band+2" alt="Random Band 2">
+                            </div>
+                            <div class="favorite-content">
+                                <h3 class="favorite-title">Random Band 2</h3>
+                                <p class="favorite-description">Un autre placeholder que tu remplaceras par un vrai groupe/artiste.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn carousel-btn-next" type="button" aria-label="Artistes suivants" data-carousel-next>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+    </div>
+</section>
+{% endblock %}
+
+

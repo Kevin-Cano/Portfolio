@@ -32,10 +32,26 @@
                 </a>
                 
                 <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Accueil</a></li>
-                    <li><a href="#about" class="nav-link">À propos</a></li>
-                    <li><a href="#projects" class="nav-link">Projets</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li>
+                        <a href="{{ path('home') }}" class="nav-link {% if app.request.attributes.get('_route') == 'home' %}active{% endif %}">
+                            Accueil
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('projects') }}" class="nav-link {% if app.request.attributes.get('_route') == 'projects' %}active{% endif %}">
+                            Projets
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('profile') }}" class="nav-link {% if app.request.attributes.get('_route') == 'profile' %}active{% endif %}">
+                            Profil
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('home') }}#contact" class="nav-link {% if app.request.attributes.get('_route') == 'home' %}active-contact{% endif %}">
+                            Contact
+                        </a>
+                    </li>
                 </ul>
                 
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">

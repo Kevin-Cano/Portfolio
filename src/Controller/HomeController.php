@@ -12,13 +12,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(): Response
     {
-        $projectsFile = $this->getParameter('kernel.project_dir') . '/config/projects.yaml';
-
-        $projects = [];
-        if (file_exists($projectsFile)) {
-            $data = Yaml::parseFile($projectsFile);
-            $projects = $data['projects'] ?? [];
-        }
+        $projects = $this->getProjects();
 
         return $this->render('home/index.html.twig', [
             'projects' => $projects,
@@ -28,18 +22,13 @@ class HomeController extends AbstractController
     #[Route('/project/{slug}', name: 'project_detail')]
     public function projectDetail(string $slug): Response
     {
-        $projectsFile = $this->getParameter('kernel.project_dir') . '/config/projects.yaml';
-
+        $projects = $this->getProjects();
         $project = null;
-        if (file_exists($projectsFile)) {
-            $data = Yaml::parseFile($projectsFile);
-            $projects = $data['projects'] ?? [];
 
-            foreach ($projects as $p) {
-                if (($p['slug'] ?? '') === $slug) {
-                    $project = $p;
-                    break;
-                }
+        foreach ($projects as $p) {
+            if (($p['slug'] ?? '') === $slug) {
+                $project = $p;
+                break;
             }
         }
 
@@ -50,6 +39,40 @@ class HomeController extends AbstractController
         return $this->render('home/project_detail.html.twig', [
             'project' => $project,
         ]);
+    }
+
+    #[Route('/projects', name: 'projects')]
+    public function projects(): Response
+    {
+        $projects = $this->getProjects();
+
+        return $this->render('home/projects.html.twig', [
+            'projects' => $projects,
+        ]);
+    }
+
+    #[Route('/profile', name: 'profile')]
+    public function profile(): Response
+    {
+        return $this->render('home/profile.html.twig');
+    }
+
+    /**
+     * Récupère la liste des projets depuis le fichier YAML de configuration.
+     *
+     * @return array<int, array<string, mixed>>
+     */
+    private function getProjects(): array
+    {
+        $projectsFile = $this->getParameter('kernel.project_dir') . '/config/projects.yaml';
+
+        if (!file_exists($projectsFile)) {
+            return [];
+        }
+
+        $data = Yaml::parseFile($projectsFile);
+
+        return $data['projects'] ?? [];
     }
 }
 

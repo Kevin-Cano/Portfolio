@@ -117,7 +117,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observer tous les éléments avec animations
-const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .skill-item, .project-card');
+const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .skill-item, .project-card, .favorite-card');
 animatedElements.forEach(el => {
     el.classList.add('reveal');
     observer.observe(el);
@@ -240,51 +240,55 @@ projectCards.forEach(card => {
 });
 
 // ==========================================
-// CURSOR EFFECT (OPTIONNEL - EFFET AVANCÉ)
+// CAROUSELS (PROJETS & PROFIL)
+// 3 éléments visibles (desktop), navigation par "page"
 // ==========================================
-const cursor = document.createElement('div');
-cursor.className = 'custom-cursor';
-cursor.style.cssText = `
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--primary-color);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-`;
+const carousels = document.querySelectorAll('.carousel');
 
-// Activer seulement sur desktop
-if (window.innerWidth > 968) {
-    document.body.appendChild(cursor);
-    
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        cursor.style.opacity = '1';
+carousels.forEach((carousel) => {
+    const track = carousel.querySelector('.carousel-track');
+    const items = track ? Array.from(track.querySelectorAll('.carousel-item')) : [];
+    const prevBtn = carousel.querySelector('[data-carousel-prev]');
+    const nextBtn = carousel.querySelector('[data-carousel-next]');
+
+    if (!track || items.length === 0) return;
+
+    let currentIndex = 0;
+    const itemsPerPage = 3;
+
+    const getPageWidth = () => {
+        if (items.length === 0) return 0;
+        const style = window.getComputedStyle(track);
+        const gap = parseFloat(style.columnGap || style.gap || '0');
+        const itemWidth = items[0].getBoundingClientRect().width;
+        return itemsPerPage * itemWidth + gap * (itemsPerPage - 1);
+    };
+
+    const maxPageIndex = Math.max(0, Math.ceil(items.length / itemsPerPage) - 1);
+
+    const updateSlide = () => {
+        const pageWidth = getPageWidth();
+        track.style.transform = `translateX(-${currentIndex * pageWidth}px)`;
+    };
+
+    prevBtn?.addEventListener('click', () => {
+        if (currentIndex === 0) {
+            currentIndex = maxPageIndex;
+        } else {
+            currentIndex -= 1;
+        }
+        updateSlide();
     });
-    
-    document.addEventListener('mouseleave', () => {
-        cursor.style.opacity = '0';
+
+    nextBtn?.addEventListener('click', () => {
+        if (currentIndex === maxPageIndex) {
+            currentIndex = 0;
+        } else {
+            currentIndex += 1;
+        }
+        updateSlide();
     });
-    
-    // Agrandir le curseur sur les liens et boutons
-    const interactiveElements = document.querySelectorAll('a, button, .project-card');
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            cursor.style.borderColor = 'var(--accent-color)';
-        });
-        
-        el.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-            cursor.style.borderColor = 'var(--primary-color)';
-        });
-    });
-}
+});
 
 // ==========================================
 // ACTIVE SECTION HIGHLIGHTING IN NAV

@@ -122,50 +122,64 @@
             <div class="section-line"></div>
             <p class="section-subtitle">Découvrez mes réalisations récentes</p>
         </div>
-        
-        <div class="projects-grid">
-            {% for project in projects %}
-            <div class="project-card fade-in-up" data-delay="{{ loop.index * 100 }}">
-                <div class="project-image">
-                    <img src="{{ project.image }}" alt="{{ project.title }}">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            {% if project.demo_url %}
-                            <a href="{{ project.demo_url }}" target="_blank" class="project-link" aria-label="Voir la démo">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            {% endif %}
-                            {% if project.github_url %}
-                            <a href="{{ project.github_url }}" target="_blank" class="project-link" aria-label="Voir le code">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-content">
-                    {% if project.featured %}
-                    <span class="project-badge">Featured</span>
-                    {% endif %}
-                    <h3 class="project-title">{{ project.title }}</h3>
-                    <p class="project-description">{{ project.short_description }}</p>
-                    
-                    <div class="project-tags">
-                        {% for tag in project.tags %}
-                        <span class="tag">{{ tag }}</span>
-                        {% endfor %}
-                    </div>
-                    
-                    <a href="{{ path('project_detail', {slug: project.slug}) }}" class="project-more">
-                        En savoir plus <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            {% else %}
+
+        {% if projects is empty %}
             <p class="no-projects">Aucun projet pour le moment.</p>
-            {% endfor %}
-        </div>
+        {% else %}
+            <div class="carousel" data-carousel="projects-home">
+                <button class="carousel-btn carousel-btn-prev" type="button" aria-label="Projets précédents" data-carousel-prev>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="carousel-track projects-grid">
+                    {% for project in projects %}
+                        <div class="carousel-item">
+                            <div class="project-card fade-in-up" data-delay="{{ loop.index * 100 }}">
+                                <div class="project-image">
+                                    <img src="{{ project.image }}" alt="{{ project.title }}">
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            {% if project.demo_url %}
+                                                <a href="{{ project.demo_url }}" target="_blank" class="project-link" aria-label="Voir la démo">
+                                                    <i class="fas fa-external-link-alt"></i>
+                                                </a>
+                                            {% endif %}
+                                            {% if project.github_url %}
+                                                <a href="{{ project.github_url }}" target="_blank" class="project-link" aria-label="Voir le code">
+                                                    <i class="fab fa-github"></i>
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-content">
+                                    {% if project.featured %}
+                                        <span class="project-badge">Featured</span>
+                                    {% endif %}
+                                    <h3 class="project-title">{{ project.title }}</h3>
+                                    <p class="project-description">{{ project.short_description }}</p>
+                                    
+                                    <div class="project-tags">
+                                        {% for tag in project.tags %}
+                                            <span class="tag">{{ tag }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    
+                                    <a href="{{ path('project_detail', {slug: project.slug}) }}" class="project-more">
+                                        En savoir plus <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <button class="carousel-btn carousel-btn-next" type="button" aria-label="Projets suivants" data-carousel-next>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        {% endif %}
     </div>
 </section>
 
