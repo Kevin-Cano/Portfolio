@@ -170,9 +170,11 @@ a {
 .project-detail-card {
     background: var(--bg-card);
     border-radius: 20px;
-    padding: 30px;
+    padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 .project-detail-header {
@@ -415,9 +417,22 @@ a {
 }
 
 .btn-primary {
-    background: var(--gradient-primary);
+    background: transparent;
     color: var(--text-primary);
     box-shadow: 0 5px 20px rgba(0, 217, 255, 0.3);
+    position: relative;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-primary);
+    border-radius: 50px;
+    z-index: -1;
 }
 
 .btn-primary:hover {
@@ -1079,10 +1094,15 @@ textarea.form-input {
     overflow: hidden;
     margin-bottom: 60px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .project-image-full img {
     width: 100%;
+    height: auto;
+    display: block;
 }
 
 .project-description-full h2 {

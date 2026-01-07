@@ -254,26 +254,26 @@ carousels.forEach((carousel) => {
     if (!track || items.length === 0) return;
 
     let currentIndex = 0;
-    const itemsPerPage = 3;
 
-    const getPageWidth = () => {
+    const getItemWidth = () => {
         if (items.length === 0) return 0;
         const style = window.getComputedStyle(track);
         const gap = parseFloat(style.columnGap || style.gap || '0');
         const itemWidth = items[0].getBoundingClientRect().width;
-        return itemsPerPage * itemWidth + gap * (itemsPerPage - 1);
+        // Retourner la largeur d'un seul élément + gap (pour décaler d'un élément à la fois)
+        return itemWidth + gap;
     };
 
-    const maxPageIndex = Math.max(0, Math.ceil(items.length / itemsPerPage) - 1);
+    const maxIndex = Math.max(0, items.length - 3); // Maximum pour toujours avoir 3 éléments visibles
 
     const updateSlide = () => {
-        const pageWidth = getPageWidth();
-        track.style.transform = `translateX(-${currentIndex * pageWidth}px)`;
+        const itemWidth = getItemWidth();
+        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     };
 
     prevBtn?.addEventListener('click', () => {
         if (currentIndex === 0) {
-            currentIndex = maxPageIndex;
+            currentIndex = maxIndex; // Revenir à la fin pour faire une boucle
         } else {
             currentIndex -= 1;
         }
@@ -281,8 +281,8 @@ carousels.forEach((carousel) => {
     });
 
     nextBtn?.addEventListener('click', () => {
-        if (currentIndex === maxPageIndex) {
-            currentIndex = 0;
+        if (currentIndex >= maxIndex) {
+            currentIndex = 0; // Revenir au début pour faire une boucle
         } else {
             currentIndex += 1;
         }
